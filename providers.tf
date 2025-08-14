@@ -14,9 +14,3 @@ terraform {
 provider "azurerm" {
   features {}
 }
-
-provider "aviatrix" {
-  controller_ip = "40.162.17.141"
-  username      = "admin"
-  password      = "Aviatrix123#"
-}
