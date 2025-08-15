@@ -14,3 +14,11 @@ terraform {
 provider "azurerm" {
   features {}
 }
+
+provider "aviatrix" {
+
+}
+
+provider "aws" {
+  
+}

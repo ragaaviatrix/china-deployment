@@ -13,6 +13,17 @@ variable "azure_transit_regions" {
   }))
 }
 
+variable "aws_transit_regions" {
+  type = map(object({
+    primary_gw = object({
+      region = string
+    })
+    ha_gw = object({
+      region = string
+    })
+  }))
+}
+
 variable "controller_nsg_name" {
   type        = string
   description = "Name of the Network Security Group for the controller."

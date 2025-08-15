@@ -8,6 +8,8 @@ resource "azurerm_public_ip" "transit_gateway_ips" {
 }
 
 
+
+
 resource "azurerm_network_security_rule" "all_transit_gateway_ips" {
   name                        = "tcp443_all_gateways"
   priority                    = 1000
@@ -55,22 +57,25 @@ resource "azurerm_network_security_rule" "udp_31283_rules" {
   network_security_group_name = var.copilot_nsg_name
 }
 
-module "azure_transit_gateway" {
-  source  = "terraform-aviatrix-modules/mc-transit/aviatrix"
-  version = "2.6.0"
 
-  cloud           = "azure"
-  region          = "China North 3"
-  cidr            = "10.188.2.0/23"
-  account         = "skf-china"
-  gw_name         = "china-transit-gateway"
-  resource_group  = "transit-rg-chn3" 
-  instance_size   = "Standard_D4s_v5"
-  local_as_number = "64565"
-  allocate_new_eip = false
-  azure_eip_name_resource_group = "chn3primarygwip:transit-rg-chn3" #'IP_Name:Resource_Group_Name'
-  eip =    "159.27.51.62"
-  ha_azure_eip_name_resource_group = "chn3hagwip:transit-rg-chn3" #'IP_Name:Resource_Group_Name'
-  ha_eip = "40.162.90.142"
 
-}
+# module "azure_transit_gateway" {
+#   source  = "terraform-aviatrix-modules/mc-transit/aviatrix"
+#   version = "2.6.0"
+
+#   cloud           = "azure"
+#   region          = "China North 3"
+#   cidr            = "10.188.2.0/23"
+#   account         = "skf-china"
+#   gw_name         = "china-transit-gateway"
+#   resource_group  = "transit-rg-chn3" 
+#   instance_size   = "Standard_D4s_v5"
+#   local_as_number = "64565"
+#   allocate_new_eip = false
+#   azure_eip_name_resource_group = "chn3primarygwip:transit-rg-chn3" #'IP_Name:Resource_Group_Name'
+#   eip =    "159.27.51.62"
+#   ha_azure_eip_name_resource_group = "chn3hagwip:transit-rg-chn3" #'IP_Name:Resource_Group_Name'
+#   ha_eip = "40.162.90.142"
+
+# }
+

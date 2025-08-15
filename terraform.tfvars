@@ -25,6 +25,25 @@ azure_transit_regions = {
     }
 }
 
+aws_transit_regions = {
+  "us_east_1" = {
+    primary_gw = {
+      region = "us-east-1"
+    }
+    ha_gw = {
+      region = "us-east-1"
+    }
+  }
+  "ap_southeast_1" = {
+    primary_gw = {
+      region = "ap-southeast-1"
+    }
+    ha_gw = {
+      region = "ap-southeast-1"
+    }
+  }
+}
+
 controller_nsg_name = "skf-china-controller-security-group"
 controller_resource_group_name = "skf-management-rg"
 copilot_nsg_name = "skf-china-copilot-security-group"

@@ -20,3 +20,16 @@ locals {
   ]
 }
 
+locals {
+  all_gateway_ips_aws = merge(
+    { for key, data in var.aws_transit_regions :
+      "${key}-primary" => { region = data.primary_gw.region }
+    },
+    { for key, data in var.aws_transit_regions :
+      "${key}-ha" => { region = data.ha_gw.region }
+    }
+  )
+  all_gateway_ips_list_aws = [
+    for gw in aws_eip.transit_gateway_ips: gw.public_ip
+  ]
+}
