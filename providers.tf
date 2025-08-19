@@ -20,5 +20,5 @@ provider "aviatrix" {
 }
 
 provider "aws" {
-  
+
 }
