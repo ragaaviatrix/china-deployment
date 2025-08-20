@@ -24,13 +24,25 @@ variable "aws_transit_regions" {
   }))
 }
 
-variable "azure_spoke_regions" {
+variable "azure_spoke_regions_sub1" {
   type = map(map(object({
     name                = string
     resource_group_name = string
     location            = string
+    subscription_id     = string
   })))
 }
+
+variable "azure_spoke_regions_sub2" {
+  type = map(map(object({
+    name                = string
+    resource_group_name = string
+    location            = string
+    subscription_id     = string
+  })))
+
+}
+
 
 variable "aws_spoke_regions" {
   type = map(map(object({

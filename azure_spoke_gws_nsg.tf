@@ -1,55 +1,35 @@
-resource "azurerm_public_ip" "spoke_gateway_ips" {
-  for_each = local.azure_spoke_gateway_ips
+module "azure_spoke_ips_sub1" {
+  source = "./modules/azure_spoke_ips"
 
-  name                = each.value.name
-  resource_group_name = each.value.resource_group_name
-  location            = each.value.location
-  allocation_method   = "Static"
+  azure_spoke_regions            = var.azure_spoke_regions_sub1
+  controller_nsg_name            = var.controller_nsg_name
+  controller_resource_group_name = var.controller_resource_group_name
+  copilot_nsg_name               = var.copilot_nsg_name
+  # Use unique priorities for each module to avoid conflicts
+  tcp443_priority   = 1100    # increment by 1 for each module
+  udp5000_priority  = 2100    # increment by 1 for each module
+  udp31283_priority = 3100    # increment by 1 for each module
+  sub_id            = "sub_1" # name it as you like
+
+  providers = {
+    azurerm = azurerm.spokesub1
+  }
 }
 
-resource "azurerm_network_security_rule" "tcp443_all_azure_spoke_gateways" {
-  name                       = "tcp443_all_azure_spoke_gateways"
-  priority                   = 1100
-  direction                  = "Inbound"
-  access                     = "Allow"
-  protocol                   = "Tcp"
-  source_port_range          = "*"
-  destination_port_range     = "443"
-  source_address_prefixes    = local.all_azure_spoke_gateway_ips_list
-  destination_address_prefix = "*"
+module "azure_spoke_ips_sub2" {
+  source = "./modules/azure_spoke_ips"
 
-  resource_group_name         = var.controller_resource_group_name
-  network_security_group_name = var.controller_nsg_name
-}
+  azure_spoke_regions            = var.azure_spoke_regions_sub2
+  controller_nsg_name            = var.controller_nsg_name
+  controller_resource_group_name = var.controller_resource_group_name
+  copilot_nsg_name               = var.copilot_nsg_name
+  # Use unique priorities for each module to avoid conflicts
+  tcp443_priority   = 1101    # increment by 1 for each module
+  udp5000_priority  = 2101    # increment by 1 for each module   
+  udp31283_priority = 3101    # increment by 1 for each module
+  sub_id            = "sub_2" # name it as you like
 
-# UDP 5000 rule
-resource "azurerm_network_security_rule" "udp5000_all_azure_spoke_gateways" {
-  name                       = "udp5000_all_azure_spoke_gateways"
-  priority                   = 2100
-  direction                  = "Inbound"
-  access                     = "Allow"
-  protocol                   = "Udp"
-  source_port_range          = "*"
-  destination_port_range     = "5000"
-  source_address_prefixes    = local.all_azure_spoke_gateway_ips_list
-  destination_address_prefix = "*"
-
-  resource_group_name         = var.controller_resource_group_name
-  network_security_group_name = var.copilot_nsg_name
-}
-
-# UDP 31283 rule
-resource "azurerm_network_security_rule" "udp31283_all_azure_spoke_gateways" {
-  name                       = "udp31283_all_azure_spoke_gateways"
-  priority                   = 3100
-  direction                  = "Inbound"
-  access                     = "Allow"
-  protocol                   = "Udp"
-  source_port_range          = "*"
-  destination_port_range     = "31283"
-  source_address_prefixes    = local.all_azure_spoke_gateway_ips_list
-  destination_address_prefix = "*"
-
-  resource_group_name         = var.controller_resource_group_name
-  network_security_group_name = var.copilot_nsg_name
+  providers = {
+    azurerm = azurerm.spokesub2
+  }
 }

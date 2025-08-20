@@ -45,17 +45,19 @@ aws_transit_regions = {
 }
 
 
-azure_spoke_regions = {
+azure_spoke_regions_sub1 = {
   "China_North_3" = {
     "gw1" = {
       name                = "chn3spoke1gwip"
       resource_group_name = "spoke-rg-chn3"
       location            = "China North 3"
+      subscription_id     = "8f14a30e-9ebf-483a-9e96-c02eca2bd0a6"
     }
     "gw2" = {
       name                = "chn3spoke2gwip"
       resource_group_name = "spoke-rg-chn3"
       location            = "China North 3"
+      subscription_id     = "8f14a30e-9ebf-483a-9e96-c02eca2bd0a6"
     }
   }
   "China_East_2" = {
@@ -63,11 +65,24 @@ azure_spoke_regions = {
       name                = "che2spoke1gwip"
       resource_group_name = "spoke-rg-che2"
       location            = "China East 2"
+      subscription_id     = "8f14a30e-9ebf-483a-9e96-c02eca2bd0a6"
     }
+  }
+}
+
+azure_spoke_regions_sub2 = {
+  "China_East_2" = {
     "gw2" = {
       name                = "che2spoke2gwip"
       resource_group_name = "spoke-rg-che2"
       location            = "China East 2"
+      subscription_id     = "8f14a30e-9ebf-483a-9e96-c02eca2bd0a6"
+    }
+    "gw3" = {
+      name                = "che2spoke3gwip"
+      resource_group_name = "spoke-rg-che2"
+      location            = "China East 2"
+      subscription_id     = "8f14a30e-9ebf-483a-9e96-c02eca2bd0a6"
     }
   }
 }

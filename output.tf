@@ -10,13 +10,19 @@ output "aws_transit_gateway_ips" {
   value       = { for key, ip in aws_eip.transit_gateway_ips : key => ip.public_ip }
 }
 
-output "azure_spoke_gateway_ips" {
-  description = "Map of region-gateway to their Public IPs"
-  value = {
-    for key, ip in azurerm_public_ip.spoke_gateway_ips :
-    key => ip.ip_address
-  }
+# Azure spoke gateway IPs output per module
+
+output "azure_spoke_gateway_ips_sub1" {
+  description = "Map of Azure spoke gateway Public IPs"
+  value       = module.azure_spoke_ips_sub1.azure_spoke_gateway_ips
 }
+
+output "azure_spoke_gateway_ips_sub2" {
+  description = "Map of Azure spoke gateway Public IPs"
+  value       = module.azure_spoke_ips_sub2.azure_spoke_gateway_ips
+}
+
+
 
 output "aws_spoke_gateway_ips" {
   description = "Map of AWS spoke gateway EIP addresses"

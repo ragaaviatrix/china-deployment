@@ -12,6 +12,18 @@ terraform {
 }
 
 provider "azurerm" {
+  alias           = "spokesub1"
+  subscription_id = "8f14a30e-9ebf-483a-9e96-c02eca2bd0a6"
+  features {}
+}
+
+provider "azurerm" {
+  alias           = "spokesub2"
+  subscription_id = "8f14a30e-9ebf-483a-9e96-c02eca2bd0a6"
+  features {}
+}
+
+provider "azurerm" {
   features {}
 }
 
