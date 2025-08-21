@@ -71,9 +71,9 @@ resource "azurerm_network_security_rule" "udp31283_all_azure_transit_gateways" {
 #   local_as_number = "64565"
 #   allocate_new_eip = false
 #   azure_eip_name_resource_group = "chn3primarygwip:transit-rg-chn3" #'IP_Name:Resource_Group_Name'
-#   eip =    "159.27.51.62"
+#   eip =    "40.162.89.200"
 #   ha_azure_eip_name_resource_group = "chn3hagwip:transit-rg-chn3" #'IP_Name:Resource_Group_Name'
-#   ha_eip = "40.162.90.142"
+#   ha_eip = "159.27.50.110"
 
 # }
 

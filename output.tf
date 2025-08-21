@@ -22,9 +22,14 @@ output "azure_spoke_gateway_ips_sub2" {
   value       = module.azure_spoke_ips_sub2.azure_spoke_gateway_ips
 }
 
+# AWS spoke gateway IPs output per module
 
-
-output "aws_spoke_gateway_ips" {
+output "aws_spoke_gateway_ips_acc1" {
   description = "Map of AWS spoke gateway EIP addresses"
-  value       = { for key, ip in aws_eip.spoke_gateway_ips : key => ip.public_ip }
+  value       = module.aws_spoke_ips_acc1.aws_spoke_gateway_ips
+}
+
+output "aws_spoke_gateway_ips_acc2" {
+  description = "Map of AWS spoke gateway EIP addresses"
+  value       = module.aws_spoke_ips_acc2.aws_spoke_gateway_ips
 }

@@ -87,7 +87,7 @@ azure_spoke_regions_sub2 = {
   }
 }
 
-aws_spoke_regions = {
+aws_spoke_regions_acc1 = {
   "us_east_1" = {
     "gw1" = {
       region = "us-east-1"
@@ -100,6 +100,19 @@ aws_spoke_regions = {
     "gw1" = {
       region = "ap-southeast-1"
     }
+    # "gw2" = {
+    #   region = "ap-southeast-1"
+    # }
+  }
+}
+
+aws_spoke_regions_acc2 = {
+  "us_east_1" = {
+    "gw2" = {
+      region = "us-east-1"
+    }
+  }
+  "ap_southeast_1" = {
     "gw2" = {
       region = "ap-southeast-1"
     }
@@ -110,3 +123,4 @@ aws_spoke_regions = {
 controller_nsg_name            = "skf-china-controller-security-group"
 controller_resource_group_name = "skf-management-rg"
 copilot_nsg_name               = "skf-china-copilot-security-group"
+

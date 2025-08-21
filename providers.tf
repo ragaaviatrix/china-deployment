@@ -32,5 +32,15 @@ provider "aviatrix" {
 }
 
 provider "aws" {
+  alias      = "aws_apse1"
+  region     = "ap-southeast-1"
+  access_key = var.aws_apse1_access_key
+  secret_key = var.aws_apse1_secret_key
+}
 
+provider "aws" {
+  alias      = "aws_use1"
+  region     = "us-east-1"
+  access_key = var.aws_use1_access_key
+  secret_key = var.aws_use1_secret_key
 }
