@@ -46,12 +46,14 @@ variable "azure_spoke_regions_sub2" {
 variable "aws_spoke_regions_acc1" {
   type = map(map(object({
     region = string
+    tags   = map(string)
   })))
 }
 
 variable "aws_spoke_regions_acc2" {
   type = map(map(object({
     region = string
+    tags   = map(string)
   })))
 }
 

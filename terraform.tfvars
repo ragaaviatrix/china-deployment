@@ -91,14 +91,23 @@ aws_spoke_regions_acc1 = {
   "us_east_1" = {
     "gw1" = {
       region = "us-east-1"
+      tags = {
+        Name        = "us-east-1-gw1"
+      }
     }
     "gw2" = {
       region = "us-east-1"
+      tags = {
+        Name        = "us-east-1-gw2"
+      }
     }
   }
   "ap_southeast_1" = {
     "gw1" = {
       region = "ap-southeast-1"
+      tags = {
+        Name        = "ap-southeast-1-gw1"
+      }
     }
     # "gw2" = {
     #   region = "ap-southeast-1"
@@ -110,11 +119,17 @@ aws_spoke_regions_acc2 = {
   "us_east_1" = {
     "gw2" = {
       region = "us-east-1"
+      tags = {
+        Name        = "us-east-1-gw2"
+      }
     }
   }
   "ap_southeast_1" = {
     "gw2" = {
       region = "ap-southeast-1"
+      tags = {
+        Name        = "ap-southeast-1-gw2"
+      }
     }
   }
 }

@@ -6,6 +6,7 @@ locals {
       for gw_key, gw in gws :
       "${region}-${gw_key}" => {
         region = gw.region
+        tags = gw.tags
       }
     }
   ]...)
