@@ -59,7 +59,7 @@ resource "azurerm_network_security_rule" "udp31283_all_azure_transit_gateways" {
 
 # module "azure_transit_gateway" {
 #   source  = "terraform-aviatrix-modules/mc-transit/aviatrix"
-#   version = "2.6.0"
+#   version = "8.0.0"
 
 #   cloud           = "azure"
 #   region          = "China North 3"
@@ -71,9 +71,9 @@ resource "azurerm_network_security_rule" "udp31283_all_azure_transit_gateways" {
 #   local_as_number = "64565"
 #   allocate_new_eip = false
 #   azure_eip_name_resource_group = "chn3primarygwip:transit-rg-chn3" #'IP_Name:Resource_Group_Name'
-#   eip =    "40.162.89.200"
+#   eip =    "40.162.17.38"
 #   ha_azure_eip_name_resource_group = "chn3hagwip:transit-rg-chn3" #'IP_Name:Resource_Group_Name'
-#   ha_eip = "159.27.50.110"
+#   ha_eip = "159.27.48.58"
 
 # }
 

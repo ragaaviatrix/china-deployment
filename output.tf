@@ -17,10 +17,10 @@ output "azure_spoke_gateway_ips_sub1" {
   value       = module.azure_spoke_ips_sub1.azure_spoke_gateway_ips
 }
 
-output "azure_spoke_gateway_ips_sub2" {
-  description = "Map of Azure spoke gateway Public IPs"
-  value       = module.azure_spoke_ips_sub2.azure_spoke_gateway_ips
-}
+# output "azure_spoke_gateway_ips_sub2" {
+#   description = "Map of Azure spoke gateway Public IPs"
+#   value       = module.azure_spoke_ips_sub2.azure_spoke_gateway_ips
+# }
 
 # AWS spoke gateway IPs output per module
 

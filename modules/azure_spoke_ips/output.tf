@@ -5,3 +5,7 @@ output "azure_spoke_gateway_ips" {
     key => ip.ip_address
   }
 }
+
+output "azure_spoke_ips_for_nsg_update" {
+  value = local.all_azure_spoke_gateway_ips_list
+}

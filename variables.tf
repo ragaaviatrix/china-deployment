@@ -17,9 +17,11 @@ variable "aws_transit_regions" {
   type = map(object({
     primary_gw = object({
       region = string
+      tags   = map(string)
     })
     ha_gw = object({
       region = string
+      tags   = map(string)
     })
   }))
 }
@@ -40,6 +42,13 @@ variable "azure_spoke_regions_sub2" {
     location            = string
     subscription_id     = string
   })))
+
+}
+
+variable "client_secret" {
+  type        = string
+  description = "Client Secret for Azure Service Principal."
+  sensitive   = true
 
 }
 

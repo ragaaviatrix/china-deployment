@@ -1,7 +1,9 @@
 resource "aws_eip" "transit_gateway_ips" {
   for_each = local.all_aws_transit_gateway_ips
 
-  region = each.value.region
+  region   = each.value.region
+  tags     = each.value.tags
+  provider = aws.aws_cnn1
 
 }
 
@@ -54,18 +56,18 @@ resource "azurerm_network_security_rule" "udp31283_all_aws_transit_gateways" {
 
 # module "aws_transit_gateway" {
 #   source  = "terraform-aviatrix-modules/mc-transit/aviatrix"
-#   version = "2.6.0"
+#   version = "8.0.0"
 
 #   cloud           = "aws"
-#   region          = "region_name" # Replace with actual region
+#   region          = "cn-north-1" # Replace with actual region
 #   cidr            = "10.188.4.0/23"
-#   account         = "skf-aws"
+#   account         = "aws-skf-china"
 #   name = "skf-aws-transit-vpc"
 #   gw_name         = "aws-china-transit-gateway"
-#   instance_size   = "c6in.large"
+#   instance_size   = "c5.xlarge"
 #   local_as_number = "64566"
 #   allocate_new_eip = false
-#   eip =    "54.225.171.21"
-#   ha_eip = "44.212.232.57"
+#   eip =    "43.196.65.53"
+#   ha_eip = "140.179.124.62"
 
 # }

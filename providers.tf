@@ -5,8 +5,8 @@ terraform {
       version = ">= 4.3.0"
     }
     aviatrix = {
-      source  = "aviatrixsystems/aviatrix"
-      version = "~>3.2.0"
+      source  = "AviatrixSystems/aviatrix"
+      version = "8.1.1"
     }
   }
 }
@@ -14,33 +14,51 @@ terraform {
 provider "azurerm" {
   alias           = "spokesub1"
   subscription_id = "8f14a30e-9ebf-483a-9e96-c02eca2bd0a6"
+  client_id       = "5a282081-4748-40a8-b5a9-e8c60b2bb88a"
+  client_secret   = var.client_secret
+  tenant_id       = "e600d6cb-71a8-4438-b9c7-fd6bc197f582"
   features {}
 }
 
 provider "azurerm" {
   alias           = "spokesub2"
   subscription_id = "8f14a30e-9ebf-483a-9e96-c02eca2bd0a6"
+  client_id       = "5a282081-4748-40a8-b5a9-e8c60b2bb88a"
+  client_secret   = var.client_secret
+  tenant_id       = "e600d6cb-71a8-4438-b9c7-fd6bc197f582"
   features {}
+}
+
+provider "azurerm" {
+  alias           = "controllersub"
+  subscription_id = "8f14a30e-9ebf-483a-9e96-c02eca2bd0a6"
+  client_id       = "5a282081-4748-40a8-b5a9-e8c60b2bb88a"
+  client_secret   = var.client_secret
+  tenant_id       = "e600d6cb-71a8-4438-b9c7-fd6bc197f582"
+  features {}
+
 }
 
 provider "azurerm" {
   features {}
 }
 
+
 provider "aviatrix" {
 
 }
 
 provider "aws" {
-  alias      = "aws_apse1"
-  region     = "ap-southeast-1"
-  access_key = var.aws_apse1_access_key
-  secret_key = var.aws_apse1_secret_key
+  alias   = "aws_cnn1"
+  region  = "cn-north-1"
+  profile = "aws_cnn1"
+
 }
 
 provider "aws" {
-  alias      = "aws_use1"
-  region     = "us-east-1"
-  access_key = var.aws_use1_access_key
-  secret_key = var.aws_use1_secret_key
+  alias   = "aws_cnnw1"
+  region  = "cn-northwest-1"
+  profile = "aws_cnnw1"
+
 }
+

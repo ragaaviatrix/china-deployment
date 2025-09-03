@@ -25,10 +25,14 @@ locals {
 locals {
   all_aws_transit_gateway_ips = merge(
     { for key, data in var.aws_transit_regions :
-      "${key}-primary" => { region = data.primary_gw.region }
+      "${key}-primary" => { region = data.primary_gw.region
+        tags                       = data.primary_gw.tags
+      }
     },
     { for key, data in var.aws_transit_regions :
-      "${key}-ha" => { region = data.ha_gw.region }
+      "${key}-ha" => { region = data.ha_gw.region
+        tags                  = data.ha_gw.tags
+      }
     }
   )
   all_aws_transit_gateway_ips_list = [

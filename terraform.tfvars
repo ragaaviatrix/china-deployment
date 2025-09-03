@@ -26,23 +26,36 @@ azure_transit_regions = {
 }
 
 aws_transit_regions = {
-  "us_east_1" = {
+  "cn_north_1" = {
     primary_gw = {
-      region = "us-east-1"
+      region = "cn-north-1"
+      tags = {
+        Name = "cn-north-1-trgw"
+      }
     }
     ha_gw = {
-      region = "us-east-1"
+      region = "cn-north-1"
+      tags = {
+        Name = "cn-north-1-ha-trgw"
+      }
     }
   }
-  "ap_southeast_1" = {
+  "cn_northwest_1" = {
     primary_gw = {
-      region = "ap-southeast-1"
+      region = "cn-northwest-1"
+      tags = {
+        Name = "cn-northwest-1-trgw"
+      }
     }
     ha_gw = {
-      region = "ap-southeast-1"
+      region = "cn-northwest-1"
+      tags = {
+        Name = "cn-northwest-1-ha-trgw"
+      }
     }
   }
 }
+
 
 
 azure_spoke_regions_sub1 = {
@@ -88,51 +101,55 @@ azure_spoke_regions_sub2 = {
 }
 
 aws_spoke_regions_acc1 = {
-  "us_east_1" = {
+  "cn_north_1" = {
     "gw1" = {
-      region = "us-east-1"
+      region = "cn-north-1"
       tags = {
-        Name        = "us-east-1-gw1"
+        Name = "cn-north-1-gw1"
       }
     }
     "gw2" = {
-      region = "us-east-1"
+      region = "cn-north-1"
       tags = {
-        Name        = "us-east-1-gw2"
+        Name = "cn-north-1-gw2"
       }
     }
   }
-  "ap_southeast_1" = {
+  "cn_northwest_1" = {
     "gw1" = {
-      region = "ap-southeast-1"
+      region = "cn-northwest-1"
       tags = {
-        Name        = "ap-southeast-1-gw1"
+        Name = "cn-northwest-1-gw1"
       }
     }
-    # "gw2" = {
-    #   region = "ap-southeast-1"
-    # }
+    "gw2" = {
+      region = "cn-northwest-1"
+      tags = {
+        Name = "cn-northwest-1-gw2"
+      }
+    }
   }
 }
 
 aws_spoke_regions_acc2 = {
-  "us_east_1" = {
+  "cn_north_1" = {
     "gw2" = {
-      region = "us-east-1"
+      region = "cn-north-1"
       tags = {
-        Name        = "us-east-1-gw2"
+        Name = "cn-north-1-gw2"
       }
     }
   }
-  "ap_southeast_1" = {
+  "cn_northwest_1" = {
     "gw2" = {
-      region = "ap-southeast-1"
+      region = "cn-northwest-1"
       tags = {
-        Name        = "ap-southeast-1-gw2"
+        Name = "cn-northwest-1-gw2"
       }
     }
   }
 }
+
 
 
 controller_nsg_name            = "skf-china-controller-security-group"
