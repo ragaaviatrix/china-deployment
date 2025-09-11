@@ -1,6 +1,6 @@
 resource "azurerm_network_security_rule" "tcp443_all_azure_spoke_gateways" {
-  name                       = "tcp443_all_azure_spoke_gateways"
-  priority                   = "1100"
+  name                       = "${var.sub_id}_tcp443_all_azure_spoke_gateways"
+  priority                   = var.tcp443_priority
   direction                  = "Inbound"
   access                     = "Allow"
   protocol                   = "Tcp"
@@ -15,8 +15,8 @@ resource "azurerm_network_security_rule" "tcp443_all_azure_spoke_gateways" {
 
 # UDP 5000 rule
 resource "azurerm_network_security_rule" "udp5000_all_azure_spoke_gateways" {
-  name                       = "udp5000_all_azure_spoke_gateways"
-  priority                   = "2100"
+  name                       = "${var.sub_id}_udp5000_all_azure_spoke_gateways"
+  priority                   = var.udp5000_priority
   direction                  = "Inbound"
   access                     = "Allow"
   protocol                   = "Udp"
@@ -31,8 +31,8 @@ resource "azurerm_network_security_rule" "udp5000_all_azure_spoke_gateways" {
 
 # UDP 31283 rule
 resource "azurerm_network_security_rule" "udp31283_all_azure_spoke_gateways" {
-  name                       = "udp31283_all_azure_spoke_gateways"
-  priority                   = "3100"
+  name                       = "${var.sub_id}_udp31283_all_azure_spoke_gateways"
+  priority                   = var.udp31283_priority
   direction                  = "Inbound"
   access                     = "Allow"
   protocol                   = "Udp"

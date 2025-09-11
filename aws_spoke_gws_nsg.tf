@@ -35,21 +35,22 @@ module "aws_spoke_ips_acc2" {
 }
 
 
-
-# module "aws_spoke_gateway" {
+# module "spoke_aws_1" {
 #   source  = "terraform-aviatrix-modules/mc-spoke/aviatrix"
-#   version = "2.6.0"
+#   version = "8.0.0"
 
-#   cloud           = "aws"
-#   region          = "cn-north-1" # Replace with actual region
-#   cidr            = "10.188.4.0/23"
-#   account         = "skf-aws"
-#   name = "skf-aws-transit-vpc"
-#   gw_name         = "aws-china-transit-gateway"
-#   instance_size   = "c6in.large"
-#   local_as_number = "64566"
+#   cloud            = "AWS"
+#   name             = "rananth-skf-vpc"
+#   region           = "cn-north-1"
+#   account          = "aws-skf-china"
+#   attached = false
+#   use_existing_vpc = true
+#   vpc_id           = "vpc-0fd37ad26d31549e3"
+#   gw_subnet        = "10.220.0.0/28"
+#   hagw_subnet      = "10.220.0.16/28"
+#   eip =    "54.223.186.77"
+#   ha_eip = "54.222.157.254"
+#   # single_ip_snat   = true
 #   allocate_new_eip = false
-#   eip =    "43.196.65.53"
-#   ha_eip = "44.212.232.57"
-
 # }
+

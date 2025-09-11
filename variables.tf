@@ -81,22 +81,3 @@ variable "copilot_nsg_name" {
   description = "Name of the Network Security Group for the CoPilot."
 }
 
-variable "aws_use1_access_key" {
-  type        = string
-  description = "AWS access key for us-east-1 region."
-}
-
-variable "aws_use1_secret_key" {
-  type        = string
-  description = "AWS secret key for us-east-1 region."
-}
-
-variable "aws_apse1_access_key" {
-  type        = string
-  description = "AWS access key for us-west-2 region."
-}
-
-variable "aws_apse1_secret_key" {
-  type        = string
-  description = "AWS secret key for us-west-2 region."
-}
