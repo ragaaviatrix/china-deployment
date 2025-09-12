@@ -1,12 +1,12 @@
-resource "azurerm_network_security_rule" "tcp443_all_azure_spoke_gateways" {
-  name                       = "tcp443_all_azure_spoke_gateways"
-  priority                   = "1100"
+resource "azurerm_network_security_rule" "tcp443_all_aws_spoke_gateways" {
+  name                       = "tcp443_all_aws_spoke_gateways"
+  priority                   = "1111"
   direction                  = "Inbound"
   access                     = "Allow"
   protocol                   = "Tcp"
   source_port_range          = "*"
   destination_port_range     = "443"
-  source_address_prefixes    = var.all_azure_spoke_gateway_ips_list
+  source_address_prefixes    = var.all_aws_spoke_gateway_ips_list
   destination_address_prefix = "*"
 
   resource_group_name         = var.controller_resource_group_name
@@ -14,15 +14,15 @@ resource "azurerm_network_security_rule" "tcp443_all_azure_spoke_gateways" {
 }
 
 # UDP 5000 rule
-resource "azurerm_network_security_rule" "udp5000_all_azure_spoke_gateways" {
-  name                       = "udp5000_all_azure_spoke_gateways"
-  priority                   = "2100"
+resource "azurerm_network_security_rule" "udp5000_all_aws_spoke_gateways" {
+  name                       = "udp5000_all_aws_spoke_gateways"
+  priority                   = "2111"
   direction                  = "Inbound"
   access                     = "Allow"
   protocol                   = "Udp"
   source_port_range          = "*"
   destination_port_range     = "5000"
-  source_address_prefixes    = var.all_azure_spoke_gateway_ips_list
+  source_address_prefixes    = var.all_aws_spoke_gateway_ips_list
   destination_address_prefix = "*"
 
   resource_group_name         = var.controller_resource_group_name
@@ -30,15 +30,15 @@ resource "azurerm_network_security_rule" "udp5000_all_azure_spoke_gateways" {
 }
 
 # UDP 31283 rule
-resource "azurerm_network_security_rule" "udp31283_all_azure_spoke_gateways" {
-  name                       = "udp31283_all_azure_spoke_gateways"
-  priority                   = "3100"
+resource "azurerm_network_security_rule" "udp31283_all_aws_spoke_gateways" {
+  name                       = "udp31283_all_aws_spoke_gateways"
+  priority                   = "3111"
   direction                  = "Inbound"
   access                     = "Allow"
   protocol                   = "Udp"
   source_port_range          = "*"
   destination_port_range     = "31283"
-  source_address_prefixes    = var.all_azure_spoke_gateway_ips_list
+  source_address_prefixes    = var.all_aws_spoke_gateway_ips_list
   destination_address_prefix = "*"
 
   resource_group_name         = var.controller_resource_group_name

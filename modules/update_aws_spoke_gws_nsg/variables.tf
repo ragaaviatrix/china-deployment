@@ -14,7 +14,7 @@ variable "copilot_nsg_name" {
 }
 
 
-variable "all_azure_spoke_gateway_ips_list" {
+variable "all_aws_spoke_gateway_ips_list" {
   type        = list(string)
-  description = "List of all Azure Spoke Gateway IPs."
+  description = "List of all AWS Spoke Gateway IPs."
 }
