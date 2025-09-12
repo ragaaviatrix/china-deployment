@@ -1,4 +1,4 @@
-readm# China Deployment
+China Deployment
 
 Terraform project to deploy **Network Security Group (NSG) rules** for Aviatrix Controller infrastructure in **China** (Azure & AWS).  
 This setup manages inbound/outbound rules for **Transit** and **Spoke Gateways** across multiple subscriptions.
