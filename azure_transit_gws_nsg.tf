@@ -64,7 +64,7 @@ resource "azurerm_network_security_rule" "udp31283_all_azure_transit_gateways" {
 #   cloud           = "azure"
 #   region          = "China North 3"
 #   cidr            = "10.188.2.0/23"
-#   account         = "skf-china"
+#   account         = "avx-china"
 #   gw_name         = "china-transit-gateway"
 #   resource_group  = "transit-rg-chn3" 
 #   instance_size   = "Standard_D4s_v5"

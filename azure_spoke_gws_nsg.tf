@@ -30,7 +30,7 @@ module "update_azure_spoke_ips_nsg" {
   controller_nsg_name            = var.controller_nsg_name
   controller_resource_group_name = var.controller_resource_group_name
   copilot_nsg_name               = var.copilot_nsg_name
-  
+
   providers = {
     azurerm = azurerm.controllersub
   }
@@ -42,12 +42,12 @@ module "update_azure_spoke_ips_nsg" {
 #   version = "8.0.0"
 
 #   cloud            = "Azure"
-#   name             = "skf-spoke1-chn3"
+#   name             = "spoke1-chn3"
 #   region           = "China North 3"
-#   account          = "skf-china"
+#   account          = "avx-china"
 #   attached = false
 #   use_existing_vpc = true
-#   vpc_id           = "skf-spoke1-chn3:spoke-rg-chn3:88fe354d-24d1-49c3-b199-871aa2680420"
+#   vpc_id           = "spoke1-chn3:spoke-rg-chn3:88fe354d-24d1-49c3-b199-871aa2680420"
 #   gw_subnet        = "10.250.0.0/28"
 #   hagw_subnet      = "10.250.0.0/28"
 #   azure_eip_name_resource_group = "chn3spoke1gwip:spoke-rg-chn3" #'IP_Name:Resource_Group_Name'

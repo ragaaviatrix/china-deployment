@@ -43,9 +43,9 @@ module "update_aws_spoke_ips_nsg" {
 #   version = "8.0.0"
 
 #   cloud            = "AWS"
-#   name             = "rananth-skf-gw"
+#   name             = "spoke-gw"
 #   region           = "cn-north-1"
-#   account          = "aws-skf-china"
+#   account          = "aws-china"
 #   attached = false
 #   use_existing_vpc = true
 #   vpc_id           = "vpc-0fd37ad26d31549e3"

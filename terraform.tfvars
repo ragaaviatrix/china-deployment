@@ -152,7 +152,7 @@ aws_spoke_regions_acc2 = {
 
 
 
-controller_nsg_name            = "skf-china-controller-security-group"
-controller_resource_group_name = "skf-management-rg"
-copilot_nsg_name               = "skf-china-copilot-security-group"
+controller_nsg_name            = "china-controller-security-group"
+controller_resource_group_name = "management-rg"
+copilot_nsg_name               = "china-copilot-security-group"
 

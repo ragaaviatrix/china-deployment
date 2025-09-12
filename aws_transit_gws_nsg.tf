@@ -61,8 +61,8 @@ resource "azurerm_network_security_rule" "udp31283_all_aws_transit_gateways" {
 #   cloud           = "aws"
 #   region          = "cn-north-1" # Replace with actual region
 #   cidr            = "10.188.4.0/23"
-#   account         = "aws-skf-china"
-#   name = "skf-aws-transit-vpc"
+#   account         = "aws-china"
+#   name = "aws-transit-vpc"
 #   gw_name         = "aws-china-transit-gateway"
 #   instance_size   = "c5.xlarge"
 #   local_as_number = "64566"
